@@ -1,13 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
+	<!-- <view class="userinfo">
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+		<block wx:else>
+			<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</block>
+	</view> -->
+	<view class="usermotto">
+    <image bindtap="roleSelection" class="role-image" src="../../asset/teacher.svg"></image>
+    <wux-button block type="assertive">班长</wux-button>
+	</view>
+  <hr />
   <view class="usermotto">
-    <i-button type="primary" bind:click="handleClick">欢迎</i-button>
-  </view>
+    <image bindtap="roleSelection" class="role-image" src="../../asset/student.svg"></image>
+    <wux-button block type="calm">成员</wux-button>
+	</view>
 </view>

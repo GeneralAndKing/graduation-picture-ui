@@ -9,12 +9,14 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  bindViewTap: function() {
+  //角色选择后跳转页面
+  roleSelection: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+
+  //以下是自带的请求头像和用户名的函数
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

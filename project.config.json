@@ -16,7 +16,7 @@
 		"scopeDataCheck": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.11.0",
 	"appid": "wx3df74b3800d2d392",
 	"projectname": "graduation-picture",
 	"debugOptions": {

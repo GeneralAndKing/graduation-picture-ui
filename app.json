@@ -6,9 +6,15 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "云毕业照",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-divider": "../../dist/divider/index",
+    "wux-icon": "../../lib/icon/index",
+    "wux-button": "../../lib/button/index"
+  }
 }
