@@ -11,17 +11,26 @@ Page({
   },
   //角色选择后跳转页面
   roleSelection: function() {
+    this.setData({
+      motto: "选择了班长"
+    })
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../logs/logs?data=' + this.data.motto
     })
   },
   //测试
   test: function() {
+    this.setData({
+      motto: "选择了成员"
+    })
     wx.request({
       url: 'https://xxx.com/user/delete',
       success:function(res){
         console.log('https://xxx.com/user/delete',res);
       }
+    })
+    wx.navigateTo({
+      url: '../logs/logs?data=' + this.data.motto
     })
   },
   //以下是自带的请求头像和用户名的函数
