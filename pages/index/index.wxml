@@ -7,13 +7,9 @@
 			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
 		</block>
 	</view> -->
-	<view class="usermotto">
-    <image bindtap="roleSelection" class="role-image" src="../../asset/teacher.svg"></image>
-    <wux-button block type="assertive">班长</wux-button>
-	</view>
-  <hr />
-  <view class="usermotto">
-    <image bindtap="test" class="role-image" src="../../asset/student.svg"></image>
-    <wux-button block type="calm">成员</wux-button>
-	</view>
+	<image bindtap="master" class="role-image" src="../../asset/teacher.svg"></image>
+	<wux-button bindtap="master" block type="assertive">我是班长</wux-button>
+  <wux-divider text="Wux Weapp" />
+	<image bindtap="student" class="role-image" src="../../asset/student.svg"></image>
+	<wux-button bindtap="student" block type="calm">我是学生</wux-button>
 </view>

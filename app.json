@@ -1,21 +1,26 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/albumCode/albumCode",
+    "pages/studentPage/studentPage",
+    "pages/createAlbum/createAlbum",
+    "pages/mangerAlbum/mangerAlbum"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "云毕业照",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "i-button": "../../dist/button/index",
-    "i-divider": "../../dist/divider/index",
-    "wux-icon": "../../lib/icon/index",
-    "wux-button": "../../lib/button/index",
-    "i-input": "../../dist/input/index"
+    "wux-icon": "../../dist/icon/index",
+    "wux-button": "../../dist/button/index",
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-input": "../../dist/input/index",
+    "wux-divider": "../../dist/divider/index"
   }
 }

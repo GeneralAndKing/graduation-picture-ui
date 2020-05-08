@@ -1,0 +1,4 @@
+<!--pages/mangerAlbum/mangerAlbum.wxml-->
+<view>
+	<text>使用相册码 {{code}} 管理相册 </text>
+</view>

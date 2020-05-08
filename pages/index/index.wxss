@@ -16,10 +16,6 @@
   color: rgb(55, 167, 220);
 }
 
-.usermotto {
-  margin-top: 100rpx;
-}
-
 .role-image {
   width: 200rpx;
   height: 200rpx;

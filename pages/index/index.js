@@ -9,28 +9,16 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //角色选择后跳转页面
-  roleSelection: function() {
-    this.setData({
-      motto: "选择了班长"
-    })
+  // 班长入口
+  master: function() {
     wx.navigateTo({
-      url: '../logs/logs?data=' + this.data.motto
+      url: '../albumCode/albumCode'
     })
   },
-  //测试
-  test: function() {
-    this.setData({
-      motto: "选择了成员"
-    })
-    wx.request({
-      url: 'https://xxx.com/user/delete',
-      success:function(res){
-        console.log('https://xxx.com/user/delete',res);
-      }
-    })
+  // 学生入口
+  student: function() {
     wx.navigateTo({
-      url: '../logs/logs?data=' + this.data.motto
+      url: '../studentPage/studentPage'
     })
   },
   //以下是自带的请求头像和用户名的函数

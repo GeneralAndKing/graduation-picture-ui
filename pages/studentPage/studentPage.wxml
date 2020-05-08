@@ -1,0 +1,4 @@
+<!--pages/studentPage/studentPage.wxml-->
+	<wux-cell hover-class="none">
+		<wux-input value="{{code}}"  controlled="true" placeholder="输入相册码 上传美照" />
+	</wux-cell>

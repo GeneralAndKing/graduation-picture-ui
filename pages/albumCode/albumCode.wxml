@@ -1,0 +1,11 @@
+<!--pages/albumCode.wxml-->
+<view class="container">
+	<view class="usermotto">
+		<wux-button block type="calm" bindtap="mangerAlbum">我有相册码 进入管理</wux-button>
+		<wux-cell class="codeInput" hover-class="none" wx:if="{{ have }}">
+			<wux-input value="{{ value }}" maxlength="10" controlled bind:change="inputCode" placeholder="输入相册码">
+			</wux-input>
+		</wux-cell>
+	</view>
+	<wux-button block type="calm" bindtap="createAlbum">木有相册码 新建图册</wux-button>
+</view>
