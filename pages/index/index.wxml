@@ -13,7 +13,7 @@
 	</view>
   <hr />
   <view class="usermotto">
-    <image bindtap="roleSelection" class="role-image" src="../../asset/student.svg"></image>
+    <image bindtap="test" class="role-image" src="../../asset/student.svg"></image>
     <wux-button block type="calm">成员</wux-button>
 	</view>
 </view>

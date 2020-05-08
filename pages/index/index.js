@@ -15,7 +15,15 @@ Page({
       url: '../logs/logs'
     })
   },
-
+  //测试
+  test: function() {
+    wx.request({
+      url: 'https://xxx.com/user/delete',
+      success:function(res){
+        console.log('https://xxx.com/user/delete',res);
+      }
+    })
+  },
   //以下是自带的请求头像和用户名的函数
   onLoad: function () {
     if (app.globalData.userInfo) {

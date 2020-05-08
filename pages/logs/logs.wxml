@@ -1,6 +1,13 @@
 <!--logs.wxml-->
-<view class="container log-list">
+<!-- <view class="container log-list">
   <block wx:for="{{logs}}" wx:for-item="log">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
+</view> -->
+<view class="container">
+  <i-panel title="圆角输入框">
+    <i-input value="{{ value6 }}" type="number" mode="wrapped" maxlength="5" bind:change="myInput" placeholder="请输入图册码" />
+  </i-panel>
+  <wux-button block type="calm">确认</wux-button>
+  <wux-button block type="calm">新建图册</wux-button>
 </view>

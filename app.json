@@ -15,6 +15,7 @@
     "i-button": "../../dist/button/index",
     "i-divider": "../../dist/divider/index",
     "wux-icon": "../../lib/icon/index",
-    "wux-button": "../../lib/button/index"
+    "wux-button": "../../lib/button/index",
+    "i-input": "../../dist/input/index"
   }
 }
