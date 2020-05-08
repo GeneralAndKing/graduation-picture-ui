@@ -18,7 +18,10 @@ Page({
   },
   myInput: function(event) {
     this.setData({
-      myData: event.detail.detail.value6
+      value6: event.detail.detail.value
     })
+  },
+  sure: function() {
+    console.log("当前输入的相册码是=" + this.data.value6)
   }
 })
