@@ -1,2 +1,15 @@
-<!--pages/positionPhoto/positionPhoto.wxml-->
-<text>数据值是{{ data }}</text>
+<wux-toast id="wux-toast" />
+<view class="page">
+  <wux-wing-blank size="large">
+    <wux-white-space size="large" />
+    <text>选择相片位置</text>
+    <wux-white-space size="large" />
+    <wux-grids col="{{col}}">
+      <wux-grid wx:for='{{num}}' data-id="{{index}}" bind:click="selected">
+          <wux-icon type="{{typeArray[index].name}}"/>
+      </wux-grid>
+    </wux-grids>
+    <wux-white-space size="large" />
+    <wux-button bind:click="" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 上传相片</wux-button>
+  </wux-wing-blank>
+</view>

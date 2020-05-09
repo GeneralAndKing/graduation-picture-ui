@@ -25,6 +25,11 @@
     "wux-divider": "../../dist/divider/index",
     "wux-white-space": "../../dist/white-space/index",
     "wux-alert": "../../dist/alert/index",
-    "wux-keyboard": "../../dist/keyboard/index"
+    "wux-keyboard": "../../dist/keyboard/index",
+    "wux-grids": "../../dist/grids/index",
+    "wux-grid": "../../dist/grid/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-tag": "../../dist/tag/index",
+    "wux-toast": "../../dist/toast/index"
   }
 }
