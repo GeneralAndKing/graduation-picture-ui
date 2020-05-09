@@ -1,4 +1,19 @@
 <!--pages/studentPage/studentPage.wxml-->
+<wux-keyboard id="wux-keyboard" />
+<view class="page">
 	<wux-cell hover-class="none">
-		<wux-input value="{{code}}"  controlled="true" placeholder="输入相册码 上传美照" />
+		<!-- <wux-input value="{{code}}"  controlled="true" placeholder="输入相册码 上传美照" /> -->
+		<wux-button bind:click="mangerStudent" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 输入相册码</wux-button>
 	</wux-cell>
+	<wux-cell hover-class="none">
+		<view class="page__hd">
+				<view class="page__title">扫描二维码</view>
+		</view>
+		<view class="page__bd">
+				<image  class="role-image" src="../../asset/student.svg"></image>
+		</view>
+	</wux-cell>
+</view>
+
+
+	

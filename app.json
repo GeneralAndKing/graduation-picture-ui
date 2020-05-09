@@ -5,7 +5,8 @@
     "pages/albumCode/albumCode",
     "pages/studentPage/studentPage",
     "pages/createAlbum/createAlbum",
-    "pages/mangerAlbum/mangerAlbum"
+    "pages/mangerAlbum/mangerAlbum",
+    "pages/positionPhoto/positionPhoto"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,11 +1,45 @@
 // pages/studentPage/studentPage.js
+import { $wuxKeyBoard } from '../../dist/index'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    code: ""
+    
+  },
+
+  /**
+   * 弹出数字键盘输入相册码
+  */
+  mangerStudent: () => {
+    $wuxKeyBoard().show({
+      className: 'className',
+      titleText: '安全键盘',
+      cancelText: '取消',
+      inputText: '输入相册码',
+      showCancel: true,
+      disorder: false,
+      maxlength: 6,
+      callback(value) {
+          console.log('输入的值=' + value)
+          wx.request({
+            url: 'https://gak.com/test?value=' + value,
+            success: function(res) {
+              console.log(res)
+              //跳转到选座位上传照片页面，附带全部座位信息、是否入座以及是否上传
+              var data = "测试数据"
+              wx.navigateTo({
+                url: `/pages/positionPhoto/positionPhoto?data=${data}`,
+              })
+            },
+            fail: function(res) {
+              console.log(res)
+            }
+          })
+          return  true
+      },
+    })
   },
 
   /**

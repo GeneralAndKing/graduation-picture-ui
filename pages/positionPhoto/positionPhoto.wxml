@@ -1,0 +1,2 @@
+<!--pages/positionPhoto/positionPhoto.wxml-->
+<text>数据值是{{ data }}</text>
