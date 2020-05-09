@@ -61,10 +61,17 @@ Page({
   },
   open() {
     $wuxKeyBoard().show({
-        callback(value) {
-            console.log(`输入的密码是：${value}`)
-            return true
-        },
+      className: 'className',
+      titleText: '安全键盘',
+      cancelText: '取消',
+      inputText: '输入相册码',
+      showCancel: true,
+      disorder: false,
+      maxlength: 4,
+      callback(value) {
+          console.log(`输入的密码是：${value}`)
+          return true
+      },
     })
   }
 })
