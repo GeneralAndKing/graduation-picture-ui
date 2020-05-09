@@ -21,8 +21,10 @@ Page({
       disorder: false,
       maxlength: 6,
       callback(value) {
-          console.log(`输入的密码是：${value}`)
-          return true
+          wx.navigateTo({
+            url: `../mangerAlbum/mangerAlbum?code=${value}`
+          })
+          return  true
       },
     })
   },
