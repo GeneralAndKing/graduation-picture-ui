@@ -9,10 +9,15 @@ App({
     // 登录
     wx.login({
       success: res => {
-        wx.showToast({
-          title: 'code：' + res.code, // 标题
-          icon: 'none', // 图标类型，默认success
-          duration: 1500 // 提示窗停留时间，默认1500ms
+        wx.setClipboardData({
+          data: res.code,
+          success: () => {
+            wx.showToast({
+              title: 'code：' + res.code, // 标题
+              icon: 'none', // 图标类型，默认success
+              duration: 10000 // 提示窗停留时间，默认1500ms
+            })
+          }
         })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }

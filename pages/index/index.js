@@ -21,6 +21,23 @@ Page({
       url: '../studentPage/studentPage'
     })
   },
+  // 学生入口
+  login: () => {
+    wx.login({
+      success: res => {
+        wx.setClipboardData({
+          data: res.code,
+          success: () => {
+            wx.showToast({
+              title: 'code 已经复制到剪贴板', // 标题
+              icon: 'none', // 图标类型，默认success
+              duration: 3000 // 提示窗停留时间，默认1500ms
+            })
+          }
+        })
+      }
+    })
+  },
   //以下是自带的请求头像和用户名的函数
   onLoad: function () {
     if (app.globalData.userInfo) {

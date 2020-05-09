@@ -12,4 +12,5 @@
   <wux-divider text="Wux Weapp" />
 	<image bindtap="student" class="role-image" src="../../asset/student.svg"></image>
 	<wux-button bindtap="student" block type="calm">我是学生</wux-button>
+	<wux-button bindtap="login" block type="calm">登录</wux-button>
 </view>
