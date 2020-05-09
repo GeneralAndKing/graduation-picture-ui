@@ -1,10 +1,11 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import { $wuxKeyBoard } from '../../dist/index'
 Page({
   data: {
     motto: 'Hello World',
+    value: '',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -56,6 +57,14 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  open() {
+    $wuxKeyBoard().show({
+        callback(value) {
+            console.log(`输入的密码是：${value}`)
+            return true
+        },
     })
   }
 })
