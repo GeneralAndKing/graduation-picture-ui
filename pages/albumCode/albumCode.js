@@ -1,48 +1,43 @@
 // pages/albumCode.js
+import { $wuxKeyBoard } from '../../dist/index'
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     code: "",
-    have: false
   },
-  inputCode: function (e) {
-    this.setData({
-      code: e.detail.value
-    })
-    console.log(e.detail.value)
-  },
+  
+  /**
+   * 弹出数字键盘输入相册码
+  */
   mangerAlbum: function () {
-    if (this.data.have) {
-      // 管理相册界面
-      if (this.data.code != "") {
-        console.log(this.data.code)
-        wx.navigateTo({
-          url: '../mangerAlbum/mangerAlbum?code=' + this.data.code
-        })
-      } else {
-        // 隐藏
-        this.setData({
-          have: false
-        })
-      }
-    } else {
-      // 显示
-      this.setData({
-        have: true
-      })
-    }
-  },
-  createAlbum: function () {
-    this.setData({
-      have: false
+    $wuxKeyBoard().show({
+      className: 'className',
+      titleText: '安全键盘',
+      cancelText: '取消',
+      inputText: '输入相册码',
+      showCancel: true,
+      disorder: false,
+      maxlength: 6,
+      callback(value) {
+          wx.navigateTo({
+            url: `../mangerAlbum/mangerAlbum?code=${value}`
+          })
+          return  true
+      },
     })
+  },
+
+  /**
+   * 跳转创建相册页面
+  */
+  createAlbum: function () {
     wx.navigateTo({
       url: '../createAlbum/createAlbum'
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,16 +1,22 @@
 <!--index.wxml-->
+<wux-keyboard id="wux-keyboard" />
 <view class="container">
-	<!-- <view class="userinfo">
+	<!-- <view class="userinfo">//获取头像和用户名
 		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
 		<block wx:else>
 			<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
 			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
 		</block>
 	</view> -->
-	<image bindtap="master" class="role-image" src="../../asset/teacher.svg"></image>
-	<wux-button bindtap="master" block type="assertive">我是班长</wux-button>
-  <wux-divider text="Wux Weapp" />
-	<image bindtap="student" class="role-image" src="../../asset/student.svg"></image>
-	<wux-button bindtap="student" block type="calm">我是学生</wux-button>
+	<view>
+		<image bindtap="master" class="role-image" src="../../asset/teacher.svg"></image>
+		<wux-button bindtap="master" block type="assertive">我是班长</wux-button>
+	</view>
+
+	<view>
+		<image bindtap="student" class="role-image" src="../../asset/student.svg"></image>
+		<wux-button bindtap="student" block type="calm">我是学生</wux-button>
+	</view>
+
 	<wux-button bindtap="login" block type="calm">登录</wux-button>
 </view>
