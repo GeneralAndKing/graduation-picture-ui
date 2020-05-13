@@ -19,7 +19,73 @@ Page({
     //未选的图标
     notIco: "logo-github",
     //全部的图标类型
-    typeArray: []
+    typeArray: [],
+    //开启选择位置
+    openSelectPosition: true,
+    //开启上传照片
+    openUploadPhoto: false,
+    //选择的位置
+    selectPosition: -1,
+    //是否为更新选择位置
+    isUpdatePosition: false
+  },
+
+  /**
+   * 更新照片
+   */
+  updatePhoto: function () {
+    
+  },
+
+  /**
+   * 上传照片
+   */
+  uploadPhoto: function () {
+
+  },
+
+  /**
+   * 更新位置
+   */
+  updatePosition: function () {
+    this.setData({
+      openSelectPosition: true,
+    })
+  },
+
+  /**
+   * 确认位置
+   */
+  confirmPosition: function () {
+    wx.request({
+      url: 'https://gak.com/test?value=' + this.data.selectPosition,
+      success: (res) => {
+        console.log(res)
+        //验证结果
+        var code = res.statusCode
+        if (code != 200) {
+          this.showTipsToast('forbidden', '位置已被占领，你来晚了')
+          //根据数据刷新页面位置信息
+        } else {
+          this.showTipsToast('success', '位置占领成功')
+          if (!this.data.isUpdatePosition) {
+            this.setData({
+              openSelectPosition: false,
+              openUploadPhoto: true,
+              isUpdatePosition: true
+            })
+          } else {
+            this.setData({
+              openSelectPosition: false
+            })
+          }
+        }
+      },
+      fail: (res) => {
+        this.showTipsToast('error', '请求服务器失败')
+        console.log(res)
+      }
+    })
   },
 
   /**
@@ -29,11 +95,16 @@ Page({
   selected: function (e) {
     //获取当前选择位置下标
     const index = e.target.dataset.id
+    //不可选择位置时提示
+    if (!this.data.openSelectPosition) {
+      this.showTipsToast('text', '位置已锁定，如需更改请点击更改按钮！')
+      return
+    }
     //判定位置是否可选
     for (var j in this.data.selectedArray) {
       if (parseInt(index) == parseInt(this.data.selectedArray[j])) {
         //弹出提示位置被坐
-        this.showToastErr()
+        this.showTipsToast('forbidden', '当前位置被别人占领啦！')
         return
       }
     }
@@ -43,20 +114,21 @@ Page({
     //给选中位置赋值
     newTypeArray[index].name = this.data.isIco
     this.setData({
-      typeArray: newTypeArray
+      typeArray: newTypeArray,
+      selectPosition: index
     })
   },
 
   /**
    * 弹出提示信息
    */
-  showToastErr() {
+  showTipsToast(tipsType, tipsText) {
     $wuxToast().show({
-        type: 'forbidden',
+        type: tipsType,
         duration: 1500,
         color: '#fff',
-        text: '当前位置被别人占领啦！',
-        success: () => console.log('禁止操作')
+        text: tipsText,
+        success: () => console.log('toast提示信息：' + tipsText)
     })
   },
 

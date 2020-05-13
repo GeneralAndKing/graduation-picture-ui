@@ -28,7 +28,7 @@ Page({
             success: function(res) {
               console.log(res)
               //跳转到选座位上传照片页面，附带全部座位信息、是否入座以及是否上传
-              var data = "测试数据"
+              var data = res.data
               wx.navigateTo({
                 url: `/pages/positionPhoto/positionPhoto?data=${data}`,
               })

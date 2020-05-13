@@ -10,6 +10,13 @@
       </wux-grid>
     </wux-grids>
     <wux-white-space size="large" />
-    <wux-button bind:click="" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 上传相片</wux-button>
+    <wux-button wx:if="{{!openSelectPosition}}"  bind:click="updatePosition" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 
+      更改位置
+    </wux-button>
+    <wux-button wx:if="{{openSelectPosition}}" bind:click="confirmPosition" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 确认位置</wux-button>
+    <wux-button wx:if="{{openUploadPhoto}}" bind:click="uploadPhoto" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 上传相片</wux-button>
+    <wux-button wx:if="{{!openUploadPhoto && !openSelectPosition}}"  bind:click="updatePhoto" block size="large" type="balanced"><wux-icon type="ios-save" size="16" /> 
+      更改照片
+    </wux-button>
   </wux-wing-blank>
 </view>
